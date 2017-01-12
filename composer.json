@@ -1,0 +1,9 @@
+{
+    "name": "cema/framework",
+    "description": "The cema framework",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+    	"php":">=5.3"
+    }
+}
