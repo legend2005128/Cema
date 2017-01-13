@@ -27,14 +27,15 @@ class Cmautoload
     }
     public static function findFile($classname)
     {
-        $class_path = str_replace('/','\\',SYS_PATH.'\Libs\\'.ucfirst($classname).'.php');
-        if( is_file($class_path)) {
+        $class_path = str_replace('\\','/',WEB_PATH.'/'.ucfirst($classname).'.php');
+        $class_real_path = WEB_PATH.DS.ucfirst($classname).'.php';
+        if( is_file($class_real_path)) {
             return $class_path;
         }
         return FALSE;
     }
     public static function includeFile($file){
-        require_once $file;
+         require_once $file;
     }
 }
 
