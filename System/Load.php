@@ -11,6 +11,7 @@ spl_autoload_register('\System\Cmautoload::autoload' );
 //加载公共函数
 require_once SYS_PATH.'/Common/functions.php';
 //1.配置
+
 //2.路由
 //3.URL defined
 $uri_type = '';
@@ -52,7 +53,8 @@ if($uri_seg_arr)
     }
 }
 else{
-    App\Controller\IndexController::Index();
+     $default_controller = ucfirst(\System\Config::item('','default_controller')."Controller");
+    App\Controller\($default_controller)::Index();
 }
 
 
