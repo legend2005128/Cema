@@ -11,6 +11,7 @@
  * Class Cmautoload
  * 自动加载类
  */
+namespace  System;
 class Cmautoload
 {
     public static  function autoload( $classname ){

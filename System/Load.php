@@ -7,7 +7,7 @@
  */
 //引入自动加载类
 require_once SYS_PATH.'/Cmautoload.php';
-spl_autoload_register('Cmautoload::autoload' );
+spl_autoload_register('\System\Cmautoload::autoload' );
 //加载公共函数
 require_once SYS_PATH.'/Common/functions.php';
 //1.配置
@@ -54,6 +54,8 @@ if($uri_seg_arr)
 else{
     App\Controller\IndexController::Index();
 }
+
+
 
 
 

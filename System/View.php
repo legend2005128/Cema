@@ -5,9 +5,7 @@
  * Date: 2017/1/13
  * Time: 15:04
  */
-
 namespace System;
-
 class View
 {
      protected static $view_file = APP_PATH.'\View';
