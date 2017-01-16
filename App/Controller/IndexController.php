@@ -12,12 +12,15 @@ use System\View;
 
 class IndexController
 {
-        function show(){
-            $seo = array('title'=>'000000000000000');
+      public  function show($id,$cname){
 
+           var_dump($id,$cname);
+           exit;
+           $seo = array('title'=>'000000000000000');
            View::display('Index/show',$seo);
         }
     function index(){
+
         $hello = array('word'=>'欢迎进入框架');
         View::display('Index/index',$hello);
     }

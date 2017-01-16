@@ -30,7 +30,7 @@ uri_params($uri,$uri_seg_arr);
 if($uri_seg_arr)
 {
     $i = 0;
-    $params= '';
+    $param_arr=[];
     foreach ($uri_seg_arr as $con =>$func_v)
     {
         if($i == 0)
@@ -41,13 +41,31 @@ if($uri_seg_arr)
         }
         else
         {
-            $params = $func_v.',';
+            $param_arr[$con]=$func_v;
         }
         $i++;
     }
-    $params = trim( $params , ',' );
     try{
-        $instance::$function();
+        $reflection = new ReflectionClass( $instance );
+        if( ! $reflection->hasMethod( $function ) )
+        {
+            echo 'Method not found!';
+            EXIT(403);
+        }
+       $actionReflection = $reflection->getMethod( $function );
+       if( !($actionReflection->isPublic()) ){
+           echo 'Method not allowed!';
+           EXIT(401);
+       }
+       $paramters = $actionReflection->getParameters();
+        foreach($paramters as $key=>$v)
+        {
+            if( isset($param_arr[$v->name]))
+            {
+                $uri_arr[] = $param_arr[$v->name];
+            }
+        }
+        $actionReflection->invokeArgs( $reflection->newInstance(),$uri_arr );
     }catch( Exception $e){
         throw new $e;
     }
@@ -55,11 +73,3 @@ if($uri_seg_arr)
 else{
     App\Controller\Index::Index();
 }
-
-
-
-
-
-
-
-
