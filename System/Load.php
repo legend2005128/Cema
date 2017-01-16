@@ -53,8 +53,7 @@ if($uri_seg_arr)
     }
 }
 else{
-     $default_controller = ucfirst(\System\Config::item('','default_controller')."Controller");
-    App\Controller\($default_controller)::Index();
+    App\Controller\Index::Index();
 }
 
 
