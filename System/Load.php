@@ -11,7 +11,6 @@ spl_autoload_register('\System\Cmautoload::autoload' );
 //加载公共函数
 require_once SYS_PATH.'/Common/functions.php';
 //1.配置
-
 //2.路由
 //3.URL defined
 $uri_type = '';
@@ -58,11 +57,14 @@ if($uri_seg_arr)
            EXIT(401);
        }
        $paramters = $actionReflection->getParameters();
+
+        $param_arr = array_values($param_arr);
+
         foreach($paramters as $key=>$v)
         {
-            if( isset($param_arr[$v->name]))
+            if( isset($param_arr[$key]))
             {
-                $uri_arr[] = $param_arr[$v->name];
+                $uri_arr[] = $param_arr[$key];
             }
         }
         $actionReflection->invokeArgs( $reflection->newInstance(),$uri_arr );
@@ -73,3 +75,6 @@ if($uri_seg_arr)
 else{
     App\Controller\Index::Index();
 }
+
+
+

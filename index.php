@@ -1,4 +1,6 @@
 <?php
+require  'a.php';
+exit;
 /**
  * Created by PhpStorm.
  * User: li
