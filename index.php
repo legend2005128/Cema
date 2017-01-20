@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
-=======
 
->>>>>>> b44f731c4faefc3484e08caa2024ec67b8ae6214
 /**
  * Created by PhpStorm.
  * User: li
@@ -50,7 +47,7 @@ define('SYS_PATH',WEB_PATH.DS.'System');
 define('APP_PATH',WEB_PATH.DS.'App');
 
 require_once SYS_PATH.DS.'Load.php';
->>>>>>> b44f731c4faefc3484e08caa2024ec67b8ae6214
+
 
 
 
