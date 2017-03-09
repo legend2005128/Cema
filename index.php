@@ -26,18 +26,6 @@ if(APP_DEBUG){
     ini_set('diaplay_errors',false);
 }
 
-<<<<<<< HEAD
-//定义根目录
-define('WEB_PATH',__DIR__);
-//系统类库路径
-define('SYS_PATH',WEB_PATH.'/'.'System');
-//业务逻辑方法库
-define('APP_PATH',WEB_PATH.'/'.'App');
-
-//加载类
-
-require_once SYS_PATH.'/Load.php';
-=======
 define('DS', DIRECTORY_SEPARATOR);
 //定义根目录
 define('WEB_PATH',__DIR__);

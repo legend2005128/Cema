@@ -6,7 +6,7 @@
  * Time: 16:59
  */
 //引入自动加载类
-<<<<<<< HEAD
+
 require_once 'System\Cmautoload.php';
 spl_autoload_register('Cmautoload::autoload' );
 
@@ -32,8 +32,7 @@ if( $uri )
         }
     }
 }
-var_dump($param_arr);
-=======
+
 require_once SYS_PATH.'/Cmautoload.php';
 spl_autoload_register('\System\Cmautoload::autoload' );
 //加载公共函数
@@ -106,4 +105,3 @@ else{
 
 
 
->>>>>>> b44f731c4faefc3484e08caa2024ec67b8ae6214
