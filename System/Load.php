@@ -6,13 +6,12 @@
  * Time: 16:59
  */
 //引入自动加载类
-
-require_once 'System\Cmautoload.php';
-spl_autoload_register('Cmautoload::autoload' );
+$rootPath_dir = dirname(__FILE__);
+require_once $rootPath_dir.'/Cmautoload.php';
+spl_autoload_register('System\Cmautoload::autoload');
 
 //1配置
 //2路由
-
 //3控制器
 $uri =  strtolower($_SERVER['REQUEST_URI']);
 if( strpos($uri,'.php') !== false )
@@ -33,8 +32,6 @@ if( $uri )
     }
 }
 
-require_once SYS_PATH.'/Cmautoload.php';
-spl_autoload_register('\System\Cmautoload::autoload' );
 //加载公共函数
 require_once SYS_PATH.'/Common/functions.php';
 //1.配置
