@@ -15,7 +15,7 @@ class IndexController
       public  function show($id,$cname){
 
            var_dump($id,$cname);
-           exit;
+
            $seo = array('title'=>'000000000000000');
            View::display('Index/show',$seo);
         }
