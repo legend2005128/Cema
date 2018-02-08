@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use System\Config;
 use System\View;
 
 class IndexController
@@ -20,7 +21,7 @@ class IndexController
            View::display('Index/show',$seo);
         }
     function index(){
-
+        Config::item("file",'file_extension');
         $hello = array('word'=>'欢迎进入框架');
         View::display('Index/index',$hello);
     }
